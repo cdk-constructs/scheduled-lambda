@@ -1,9 +1,8 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [prereleased]
 
 jobs:
   build:
@@ -15,9 +14,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
+          node-version: ${{ matrix.node }}
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: cd src && npm install
 
       - name: Build
         run: cd src && npm run build
