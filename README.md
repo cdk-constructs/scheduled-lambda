@@ -1,6 +1,7 @@
 # scheduled-lambda
 
 ![CI](https://github.com/cdk-constructs/scheduled-lambda/workflows/CI/badge.svg)
+![Package Audit](https://github.com/cdk-constructs/scheduled-lambda/workflows/Package%20Audit/badge.svg?branch=main)
 
 Simple CDK construct to create a lambda function which is invoked from a cloudwatch schedule.
 
