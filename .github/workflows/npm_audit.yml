@@ -1,9 +1,10 @@
-name: CI
+name: Package Audit
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * 1"
+
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -16,11 +17,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        run: cd src && npm install
-
-      - name: Build
-        run: cd src && npm run build
-
-      - name: Run Tests
-        run: cd src && npm run test
+      - name: Audit Packages
+        run: cd src && npm audit
