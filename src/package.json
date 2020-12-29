@@ -1,5 +1,10 @@
 {
-  "name": "src",
+  "name": "@simple-cdk-constructs/scheduled-lambda",
+  "publishConfig": {
+    "access": "public",
+    "directory": "src"
+  },
+  "repository": "https://github.com/cdk-constructs/scheduled-lambda",
   "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

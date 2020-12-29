@@ -4,7 +4,3 @@
 # CDK asset staging directory
 .cdk.staging
 cdk.out
-
-test
-jest.config.js
-tsconfig.json

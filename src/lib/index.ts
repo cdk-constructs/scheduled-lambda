@@ -12,16 +12,20 @@ export interface ScheduledLambdaProps {
 
 export class ScheduledLambda extends core.Construct {
 
+  public lambdaFunction: lambda.Function;
+  public lambdaTarget: targets.LambdaFunction;
+  public scheduleRule: events.Rule;
+
   constructor(scope: Construct, id: string, props: ScheduledLambdaProps) {
     super(scope, id);
 
-    const handler = new lambda.Function(this, 'scheduled-function', props.functionProps);
+    this.lambdaFunction = new lambda.Function(this, 'scheduled-function', props.functionProps);
 
-    const lambdaTarget = new targets.LambdaFunction(handler);
+    this.lambdaTarget = new targets.LambdaFunction(this.lambdaFunction);
 
-    const scheduleRule = new events.Rule(this, 'scheduled-rule', {
+    this.scheduleRule = new events.Rule(this, 'scheduled-rule', {
       schedule: props.schedule,
-      targets: [lambdaTarget],
+      targets: [this.lambdaTarget],
       ruleName: props.name + '-schedule'
     });
   }
