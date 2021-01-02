@@ -11,11 +11,17 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest"
+    "test": "jest",
+    "check-package-files": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "release:major": "npm version major -m \"[MAJOR] Version %s.\"",
+    "release:minor": "npm version minor -m \"[MINOR] Version %s.\"",
+    "release:patch": "npm version patch -m \"[PATCH] Version %s.\"",
+    "preversion": "npm install && npm build && npm test",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.80.0",
-    "@aws-cdk/aws-logs": "^1.80.0",
+    "@aws-cdk/assert": "1.81.0",
+    "@aws-cdk/aws-logs": "^1.81.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "jest": "^26.4.2",
@@ -23,12 +29,12 @@
     "typescript": "~3.9.7"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.80.0"
+    "@aws-cdk/core": "1.81.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-events": "^1.80.0",
-    "@aws-cdk/aws-events-targets": "^1.80.0",
-    "@aws-cdk/aws-lambda": "^1.80.0",
-    "@aws-cdk/core": "1.80.0"
+    "@aws-cdk/aws-events": "^1.81.0",
+    "@aws-cdk/aws-events-targets": "^1.81.0",
+    "@aws-cdk/aws-lambda": "^1.81.0",
+    "@aws-cdk/core": "1.81.0"
   }
 }
