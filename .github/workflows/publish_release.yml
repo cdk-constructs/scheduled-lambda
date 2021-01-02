@@ -20,15 +20,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
-        run: cd src && npm install
+        run: npm install
 
       - name: Build
-        run: cd src && npm run build
+        run: npm run build
 
       - name: Run Tests
-        run: cd src && npm run test
+        run: npm run test
 
       - name: Publish
-        run: cd src && npm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
