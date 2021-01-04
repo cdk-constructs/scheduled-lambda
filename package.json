@@ -23,8 +23,8 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.81.0",
-    "@aws-cdk/aws-logs": "^1.81.0",
+    "@aws-cdk/assert": "1.82.0",
+    "@aws-cdk/aws-logs": "^1.82.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "jest": "^26.4.2",
@@ -32,12 +32,12 @@
     "typescript": "~3.9.7"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.81.0"
+    "@aws-cdk/core": "1.82.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-events": "^1.81.0",
-    "@aws-cdk/aws-events-targets": "^1.81.0",
-    "@aws-cdk/aws-lambda": "^1.81.0",
-    "@aws-cdk/core": "1.81.0"
+    "@aws-cdk/aws-events": "^1.82.0",
+    "@aws-cdk/aws-events-targets": "^1.82.0",
+    "@aws-cdk/aws-lambda": "^1.82.0",
+    "@aws-cdk/core": "1.82.0"
   }
 }
